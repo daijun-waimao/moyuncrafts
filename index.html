@@ -19,11 +19,23 @@
             color: #333; 
             background-color: #f5f7fa;
         }
-        h1 { 
-            color: #1a365d; 
-            border-bottom: 3px solid #e2e8f0; 
-            padding-bottom: 12px; 
-            margin-bottom: 20px;
+        /* 品牌横幅 */
+        .banner {
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 2px solid #e2e8f0;
+            margin-bottom: 30px;
+        }
+        .banner h1 {
+            color: #1a365d;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            border: none;
+            padding: 0;
+        }
+        .banner p {
+            color: #64748b;
+            font-size: 1.1em;
         }
         h2 {
             color: #2d3748;
@@ -33,20 +45,47 @@
             color: #2b6cb0;
             margin-bottom: 10px;
         }
-        .product { 
+        /* 卡片样式 + hover动效 */
+        .product, .contact { 
             margin: 20px 0; 
             padding: 20px; 
             border: none; 
             border-radius: 10px; 
             background-color: white; 
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: transform 0.2s ease;
         }
-        .contact { 
-            margin-top: 40px; 
-            padding: 20px;
-            border-radius: 10px;
-            background-color: white;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        .product:hover, .contact:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        }
+        /* 产品图片样式 */
+        .product-img {
+            width: 100%;
+            max-width: 300px;
+            height: 200px;
+            background-color: #e2e8f0;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+            font-size: 0.9em;
+        }
+        /* WhatsApp按钮 */
+        .whatsapp-btn {
+            display: inline-block;
+            background-color: #25d366;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        .whatsapp-btn:hover {
+            background-color: #128c7e;
         }
         footer { 
             margin-top: 40px; 
@@ -56,19 +95,32 @@
         }
         @media (max-width: 600px) {
             body { padding: 15px; }
+            .banner h1 { font-size: 2em; }
+            .product-img { max-width: 100%; }
         }
     </style>
 </head>
 <body>
-    <h1>Moyun Crafts</h1>
-    <p><em>Handmade Crafts & Gadgets from China | Worldwide Shipping</em></p >
+    <!-- 品牌横幅 -->
+    <div class="banner">
+        <h1>Moyun Crafts</h1>
+        <p>Handmade Crafts & Gadgets from China | Worldwide Shipping</p >
+    </div>
 
     <h2>Our Products</h2>
     <div class="product">
+        <!-- 产品图片占位符 -->
+        <div class="product-img">
+            🔹 Product Image Placeholder (Stainless Steel Jewelry)
+        </div>
         <h3>Stainless Steel Jewelry</h3>
         <p>Custom logo accepted, small MOQ available. High quality, affordable price. Perfect for wholesale & retail.</p >
     </div>
     <div class="product">
+        <!-- 产品图片占位符 -->
+        <div class="product-img">
+            🔹 Product Image Placeholder (Handmade Decorations)
+        </div>
         <h3>Handmade Decorations</h3>
         <p>Unique designs, perfect for gifts & home decor. Fast shipping to USA / Europe / Asia.</p >
     </div>
@@ -78,6 +130,8 @@
         <p>WhatsApp: +86 18692494169</p >
         <p>Email: 2410294716@qq.com</p >
         <p>Location: Maoshan North Road, Chang'an Town, Dongguan, Guangdong, China</p >
+        <!-- 一键联系按钮 -->
+        <a href=" " class="whatsapp-btn">💬 Chat with us on WhatsApp</a >
     </div>
 
     <footer>
@@ -85,3 +139,5 @@
     </footer>
 </body>
 </html>
+           
+    
