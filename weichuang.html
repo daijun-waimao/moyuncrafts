@@ -1,163 +1,380 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WEICHUANG CHEMICAL</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial,sans-serif;background:#f7f9fc;padding:20px}
-.container{max-width:950px;margin:0 auto}
-
-.header{
-  background:#fff;
-  padding:30px;
-  border-radius:14px;
-  text-align:center;
-  margin-bottom:25px;
-  box-shadow:0 2px 12px rgba(0,0,0,0.05)
-}
-.header h1{font-size:28px;color:#1a5276;margin-bottom:8px}
-.header p{font-size:16px;color:#666}
-
-.product{
-  background:#fff;
-  border-radius:14px;
-  padding:25px;
-  margin-bottom:20px;
-  box-shadow:0 2px 12px rgba(0,0,0,0.05);
-  display:flex;
-  gap:22px;
-  align-items:flex-start
-}
-.product-img{
-  width:170px;
-  height:170px;
-  object-fit:cover;
-  border-radius:10px;
-  background:#eef5ff
-}
-.product-info{flex:1}
-.product-info h2{
-  font-size:20px;
-  color:#1a5276;
-  margin-bottom:10px;
-  border-left:4px solid #1a5276;padding-left:10px
-}
-.product-info p{margin-bottom:8px;color:#333}
-
-table{
-  width:100%;
-  border-collapse:collapse;
-  margin-top:10px
-}
-table,th,td{border:1px solid #ddd}
-th,td{padding:10px;text-align:center;font-size:14px}
-th{background:#f0f7ff}
-
-.contact{
-  background:#fff;
-  padding:28px;
-  border-radius:14px;
-  box-shadow:0 2px 12px rgba(0,0,0,0.05)
-}
-.contact h2{
-  font-size:21px;
-  color:#1a5276;
-  margin-bottom:15px;
-  border-left:4px solid #1a5276;padding-left:10px
-}
-.contact p{margin:7px 0;color:#333}
-
-@media (max-width:768px){
-  .product{flex-direction:column}
-  .product-img{width:100%;height:auto}
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>魏洲化工 - 长沙魏洲化工有限公司</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        /* 头部样式 */
+        .header {
+            background: linear-gradient(135deg, #0a3d62, #3c6382);
+            color: white;
+            padding: 40px 20px;
+            border-radius: 16px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        .header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        /* 产品卡片样式 */
+        .product-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+            transition: all 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+        .product-img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 12px;
+            background: #f0f4f8;
+        }
+        .product-info {
+            flex: 1;
+        }
+        .product-title {
+            font-size: 22px;
+            color: #0a3d62;
+            margin-bottom: 10px;
+            font-weight: 600;
+            border-left: 4px solid #0a3d62;
+            padding-left: 12px;
+        }
+        .product-desc {
+            color: #555;
+            margin-bottom: 15px;
+            font-size: 15px;
+        }
+        /* 表格样式 */
+        .product-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .product-table th, .product-table td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #e0e6ed;
+            font-size: 14px;
+        }
+        .product-table th {
+            background-color: #f0f4f8;
+            color: #0a3d62;
+            font-weight: 600;
+        }
+        /* 联系我们部分 */
+        .contact-section {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .contact-title {
+            font-size: 24px;
+            color: #0a3d62;
+            margin-bottom: 20px;
+            font-weight: 600;
+            border-left: 4px solid #0a3d62;
+            padding-left: 12px;
+        }
+        .contact-info {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        .contact-info p {
+            margin: 8px 0;
+            font-size: 15px;
+        }
+        /* 一键联系按钮 */
+        .contact-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .contact-btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: opacity 0.3s ease;
+        }
+        .contact-btn:hover {
+            opacity: 0.9;
+        }
+        .whatsapp-btn {
+            background-color: #25D366;
+        }
+        .wechat-btn {
+            background-color: #07C160;
+        }
+        .tiktok-btn {
+            background-color: #000000;
+        }
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .product-card {
+                flex-direction: column;
+            }
+            .product-img {
+                width: 100%;
+                height: auto;
+            }
+            .contact-buttons {
+                flex-direction: column;
+            }
+            .contact-btn {
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <!-- 头部 -->
+        <div class="header">
+            <h1>魏洲化工</h1>
+            <p>长沙魏洲化工有限公司 - 专业化工制造商</p>
+        </div>
 
-<div class="container">
+        <!-- 产品1：亚硫酸钠 -->
+        <div class="product-card">
+            <img class="product-img" src="https://raw.githubusercontent.com/daijun-waimao/moyuncrafts/main/img1.png" alt="亚硫酸钠">
+            <div class="product-info">
+                <h2 class="product-title">亚硫酸钠</h2>
+                <p class="product-desc">应用：采矿、水产养殖、纺织、皮革</p>
+                <table class="product-table">
+                    <thead>
+                        <tr>
+                            <th>项目</th>
+                            <th>技术级</th>
+                            <th>食品级</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Na2S2O5</td>
+                            <td>≥96.5%</td>
+                            <td>≥97%</td>
+                        </tr>
+                        <tr>
+                            <td>SO2</td>
+                            <td>—</td>
+                            <td>≥65%</td>
+                        </tr>
+                        <tr>
+                            <td>Fe</td>
+                            <td>≤0.005%</td>
+                            <td>≤0.005%</td>
+                        </tr>
+                        <tr>
+                            <td>水不溶性</td>
+                            <td>—</td>
+                            <td>≤0.05%</td>
+                        </tr>
+                        <tr>
+                            <td>PB</td>
+                            <td>—</td>
+                            <td>≤0.001%</td>
+                        </tr>
+                        <tr>
+                            <td>作为</td>
+                            <td>≤0.0002%</td>
+                            <td>≤0.0001%</td>
+                        </tr>
+                        <tr>
+                            <td>pH值</td>
+                            <td>4-4.5</td>
+                            <td>4-4.5</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
-<div class="header">
-<h1>WEICHUANG CHEMICAL</h1>
-<p>CHANGSHA WEICHUANG CHEMICAL CO.,LTD</p>
-</div>
+        <!-- 产品2：硫代硫酸钠 -->
+        <div class="product-card">
+            <img class="product-img" src="https://raw.githubusercontent.com/daijun-waimao/moyuncrafts/main/img2.png" alt="硫代硫酸钠">
+            <div class="product-info">
+                <h2 class="product-title">硫代硫酸钠</h2>
+                <p class="product-desc">应用：水处理、摄影、水产养殖</p>
+                <table class="product-table">
+                    <thead>
+                        <tr>
+                            <th>项目</th>
+                            <th>照片分级</th>
+                            <th>技术级</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Na2S2O3·5H2O</td>
+                            <td>≥99%</td>
+                            <td>≥99%</td>
+                        </tr>
+                        <tr>
+                            <td>水不溶性</td>
+                            <td>≤0.01%</td>
+                            <td>≤0.03%</td>
+                        </tr>
+                        <tr>
+                            <td>硫化物</td>
+                            <td>≤0.001%</td>
+                            <td>≤0.003%</td>
+                        </tr>
+                        <tr>
+                            <td>Fe</td>
+                            <td>≤0.001%</td>
+                            <td>≤0.003%</td>
+                        </tr>
+                        <tr>
+                            <td>pH值</td>
+                            <td>6.5-9.5</td>
+                            <td>6.5-9.5</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
-<div class="product">
-<img class="product-img" src="https://raw.githubusercontent.com/daijun-waimao/moyuncrafts/main/img1.png" alt="Sodium Metabisulfite">
-<div class="product-info">
-<h2>Sodium Metabisulfite</h2>
-<p>Application: Mining, Aquaculture, Textile, Leather</p>
-<table>
-<tr><th>Item</th><th>Tech Grade</th><th>Food Grade</th></tr>
-<tr><td>Na2S2O5</td><td>≥96.5%</td><td>≥97%</td></tr>
-<tr><td>SO2</td><td>—</td><td>≥65%</td></tr>
-<tr><td>Fe</td><td>≤0.005%</td><td>≤0.005%</td></tr>
-<tr><td>Water Insoluble</td><td>—</td><td>≤0.05%</td></tr>
-<tr><td>Pb</td><td>—</td><td>≤0.001%</td></tr>
-<tr><td>As</td><td>≤0.0002%</td><td>≤0.0001%</td></tr>
-<tr><td>pH</td><td>4-4.5</td><td>4-4.5</td></tr>
-</table>
-</div>
-</div>
+        <!-- 产品3：亚硫酸钠（造纸级） -->
+        <div class="product-card">
+            <img class="product-img" src="https://raw.githubusercontent.com/daijun-waimao/moyuncrafts/main/img3.png" alt="亚硫酸钠">
+            <div class="product-info">
+                <h2 class="product-title">亚硫酸钠</h2>
+                <p class="product-desc">应用：造纸、采矿、水处理</p>
+                <table class="product-table">
+                    <thead>
+                        <tr>
+                            <th>项目</th>
+                            <th>食品级</th>
+                            <th>技术级</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Na2SO3</td>
+                            <td>≥97%</td>
+                            <td>≥96%/93%</td>
+                        </tr>
+                        <tr>
+                            <td>自由碱</td>
+                            <td>≤0.1%</td>
+                            <td>≤0.4%</td>
+                        </tr>
+                        <tr>
+                            <td>Fe</td>
+                            <td>≤0.002%</td>
+                            <td>≤0.004%</td>
+                        </tr>
+                        <tr>
+                            <td>水不溶性</td>
+                            <td>≤0.02%</td>
+                            <td>≤0.05%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
-<div class="product">
-<img class="product-img" src="https://raw.githubusercontent.com/daijun-waimao/moyuncrafts/main/img2.png" alt="Sodium Thiosulfate">
-<div class="product-info">
-<h2>Sodium Thiosulfate</h2>
-<p>Application: Water treatment, Photographic, Aquaculture</p>
-<table>
-<tr><th>Item</th><th>Photo Grade</th><th>Tech Grade</th></tr>
-<tr><td>Na2S2O3·5H2O</td><td>≥99%</td><td>≥99%</td></tr>
-<tr><td>Water Insoluble</td><td>≤0.01%</td><td>≤0.03%</td></tr>
-<tr><td>Sulfide</td><td>≤0.001%</td><td>≤0.003%</td></tr>
-<tr><td>Fe</td><td>≤0.001%</td><td>≤0.003%</td></tr>
-<tr><td>pH</td><td>6.5-9.5</td><td>6.5-9.5</td></tr>
-</table>
-</div>
-</div>
+        <!-- 产品4：碳酸亚铁 -->
+        <div class="product-card">
+            <img class="product-img" src="https://raw.githubusercontent.com/daijun-waimao/moyuncrafts/main/img4.png" alt="碳酸亚铁">
+            <div class="product-info">
+                <h2 class="product-title">碳酸亚铁</h2>
+                <p class="product-desc">应用：饲料添加剂、石油钻探</p>
+                <table class="product-table">
+                    <thead>
+                        <tr>
+                            <th>项目</th>
+                            <th>进料级</th>
+                            <th>技术级</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Fe</td>
+                            <td>38%-40%</td>
+                            <td>35%-38%</td>
+                        </tr>
+                        <tr>
+                            <td>PB</td>
+                            <td>≤0.003%</td>
+                            <td>≤0.004%</td>
+                        </tr>
+                        <tr>
+                            <td>作为</td>
+                            <td>≤0.0002%</td>
+                            <td>≤0.0002%</td>
+                        </tr>
+                        <tr>
+                            <td>CD</td>
+                            <td>≤0.0006%</td>
+                            <td>≤0.0006%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
-<div class="product">
-<img class="product-img" src="https://raw.githubusercontent.com/daijun-waimao/moyuncrafts/main/img3.png" alt="Sodium Sulfite">
-<div class="product-info">
-<h2>Sodium Sulfite</h2>
-<p>Application: Paper, Mining, Water treatment</p>
-<table>
-<tr><th>Item</th><th>Food Grade</th><th>Tech Grade</th></tr>
-<tr><td>Na2SO3</td><td>≥97%</td><td>≥96%/93%</td></tr>
-<tr><td>Free Alkali</td><td>≤0.1%</td><td>≤0.4%</td></tr>
-<tr><td>Fe</td><td>≤0.002%</td><td>≤0.004%</td></tr>
-<tr><td>Water Insoluble</td><td>≤0.02%</td><td>≤0.05%</td></tr>
-</table>
-</div>
-</div>
-
-<div class="product">
-<img class="product-img" src="https://raw.githubusercontent.com/daijun-waimao/moyuncrafts/main/img4.png" alt="Ferrous Carbonate">
-<div class="product-info">
-<h2>Ferrous Carbonate</h2>
-<p>Application: Feed additive, Oil Drilling</p>
-<table>
-<tr><th>Item</th><th>Feed Grade</th><th>Tech Grade</th></tr>
-<tr><td>Fe</td><td>38%-40%</td><td>35%-38%</td></tr>
-<tr><td>Pb</td><td>≤0.003%</td><td>≤0.004%</td></tr>
-<tr><td>As</td><td>≤0.0002%</td><td>≤0.0002%</td></tr>
-<tr><td>Cd</td><td>≤0.0006%</td><td>≤0.0006%</td></tr>
-</table>
-</div>
-</div>
-
-<div class="contact">
-<h2>Contact Us</h2>
-<p><strong>Head Office:</strong> 601 C1 Building, YongSheng Commerce Square, No.222, Labor East Road, Changsha, Hunan, China</p>
-<p><strong>Factory:</strong> Dapu Town, Hengdong, Hunan, China</p>
-<p><strong>Tel:</strong> 0086-731-85573222</p>
-<p><strong>Mobile:</strong> 0086-13808425018</p>
-<p><strong>Email:</strong> info@weichuangchem.com</p>
-<p><strong>Website:</strong> www.weichuangchem.com</p>
-</div>
-
-</div>
+        <!-- 联系我们 -->
+        <div class="contact-section">
+            <h2 class="contact-title">联系我们</h2>
+            <div class="contact-info">
+                <p><strong>总部：</strong>中国湖南长沙市永盛商务广场222号劳动东路C1楼601号</p>
+                <p><strong>工厂：</strong>中国湖南恒东大浦镇</p>
+                <p><strong>电话：</strong>0086-731-85573222</p>
+                <p><strong>手机：</strong>0086-19168062795</p>
+                <p><strong>电子邮件：</strong>info@weichuangchem.com</p>
+                <p><strong>网站：</strong>www.weichuangchem.com</p>
+            </div>
+            <div class="contact-buttons">
+                <!-- 已更新她的WhatsApp号码，客户点一下就能直接加她 -->
+                <a href="https://wa.me/8613203126736" class="contact-btn whatsapp-btn" target="_blank">WhatsApp联系</a>
+                <a href="#" class="contact-btn wechat-btn" target="_blank">微信联系</a>
+                <a href="#" class="contact-btn tiktok-btn" target="_blank">关注TikTok</a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
